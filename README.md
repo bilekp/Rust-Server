@@ -9,7 +9,7 @@ Cracked or pirated versions of Rust are not supported in any way, shape or form.
 
 ---
 
-[![Install on DigitalOcean](http://installer.71m.us/button.svg)](http://installer.71m.us/install?url=https://github.com/mdarkness1988/rust-server)
+[![Install on DigitalOcean](http://installer.71m.us/button.svg)](http://installer.71m.us/install?url=https://github.com/tobiaspedersen/rust-server)
 
 **FEATURES**
 
@@ -26,7 +26,7 @@ Cracked or pirated versions of Rust are not supported in any way, shape or form.
 
 1. Add new container under Docker tab.
 2. Give the container a name you prefer.
-3. Add ``` mdarkness1988/rust-server ``` in Repository.
+3. Add ``` tobiaspedersen/rust-server ``` in Repository.
 4. Add the variables you want from the list below.
 5. Add ports to container, (8080/TCP, 28015/TCP&UDP, 28016/TCP).
 6. Save Template and RUN :)
@@ -78,5 +78,5 @@ When the server starts up or restarts, it will move old logs to `logs/archive/`.
 A small application, called *rcon*, that can both send and receive messages to the server, much like the console on the Windows version, but this happens to use RCON (webrcon).
 To use it, simply run the following on the host: `docker exec rust-server rcon say Hello World`, substituting *rust-server* for your own container name
 
-# SUPPORT    [Click Here](https://github.com/mdarkness1988/Rust-Server/issues)
+# SUPPORT    [Click Here](https://github.com/tobiaspedersen/Rust-Server/issues)
 
