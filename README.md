@@ -9,8 +9,6 @@ Cracked or pirated versions of Rust are not supported in any way, shape or form.
 
 ---
 
-[![Install on DigitalOcean](http://installer.71m.us/button.svg)](http://installer.71m.us/install?url=https://github.com/tobiaspedersen/rust-server)
-
 **FEATURES**
 
        1. Automatic updates on release (Default: Enabled in config)
