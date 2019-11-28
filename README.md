@@ -36,32 +36,33 @@ This image also supports having a modded server (using Oxide), check the ```RUST
 
 The following environment variables are available if you wish to modify the template:
 ```
-ARGUMENTS (DEFAULT: "")
-IDENTITY (DEFAULT: "docker" - Mainly used for the name of the save directory)
-SEED (DEFAULT: "0" - The server map seed, must be an integer)
-MAP (DEFAULT: "3500" - The map size, must be an integer)
-NAME (DEFAULT: "Rust Server" - The publicly visible server name)
-RUST_SERVER_MAXPLAYERS (DEFAULT: "200" - Maximum players on the server, must be an integer)
-DESCRIPTION (DEFAULT: "This is a Rust server running inside a Docker container!" - The publicly visible server description)
-RUST_SERVER_URL (DEFAULT: "https://hub.docker.com/r/mdarkness1988/rust-server/" - The publicly visible server website)
-BANNER_URL (DEFAULT: "" - The publicly visible server banner image URL)
-INTERVAL (DEFAULT: "300" - Amount of seconds between automatic saves.)
-RCON_WEB (DEFAULT "1" - Set to 1 or 0 to enable or disable the web-based RCON server)
-RCON_PORT (DEFAULT: "28016" - RCON server port)
-PASSWORD (DEFAULT: "server" - RCON server password, please change this!)
-RELEASE (DEFAULT: Not set - Sets the branch argument to use, eg. set to "-beta prerelease" for the prerelease branch)
-RUST_UPDATE_BRANCH (DEFAULT: "public" - Set to match the branch that you want to use for updating, ie. "prerelease" or "public", but do not specify arguments like "-beta")
-OXIDE (DEFAULT: "0" - Set to 1 to automatically install the latest version of Oxide)
-SECURE (DEFAULT: "1" - Set to 0 to disable Anti-Hack)
-FPS (DEFAULT: "-1" - Limits how many times the server renders objects per second. -1 is no limit)
-UPDATEBATCH (DEFAULT: "256” - How fast to update objects in game. More info online <server.updatebatch>)
-ANNOUNCE1 (DEFAULT: Empty - Enter announcement messages every so many minutes set by (DELAY). Must fill announce in order from 1-5. Nothing entered will disable announcements)
-ANNOUNCE2 (DEFAULT: Blank)
-ANNOUNCE3 (DEFAULT: Blank)
-ANNOUNCE4 (DEFAULT: Blank)
-ANNOUNCE5 (DEFAULT: Blank)
-DELAY (DEFAULT: "5" - Enter the amount in minutes to make to the next announcrment)
-
+PUBLIC - 1 = On, 0 = Off. Will automatically port forward your router. (UPnP)
+PVE - 1 = Enabled  (Player Vs Entities), 0 = Disabled (Player Vs Player) 
+AUTO - 1 = Yes, 0 = No. Notifies players and automatically updates server/oxide and manages wipes.
+WIPEDAYS - Blank = No server wipes, or enter the amount of days until server wipes
+WIPE_TITLE - 1 = Enabled, 0 = Disabled. Will show the the server wiped date in the server name. 
+OXIDE - 1 = Enabled, 0 = Disable. Be able to install plugins from Oxide. 
+PERFORMANCE - 1 = Resource Friendly (Optimized), 2 = Original (Rust Default Settings), 3 = Competitive (Resource Gobbler)
+RELEASE - public = (Latest update), prerelease = (Under development)
+NAME - Server name.
+DESCRIPTION - Server description.
+BANNER - Server banner (Banner must be 512x256 PNG)
+PLAYERS - Max amount of players that can join the server.
+PASSWORD - Rcon Password
+ARGUMENTS - Extra Startup Arguments
+ANNOUNCE1 - Leave BLANK to disable announcements. 
+ANNOUNCE2 - Leave BLANK to disable announcements. 
+ANNOUNCE3 - Leave BLANK to disable announcements. 
+ANNOUNCE4 - Leave BLANK to disable announcements. 
+ANNOUNCE5 - Leave BLANK to disable announcements. 
+MAPSIZE - tiny, small, medium, large, massive, or a number between 1000-8000
+PORTFORWARD_WEB - Rcon web port
+PORTFORWARD_RUST - Rust game port
+PORTFORWARD_RCON - Rcon port
+MAPSEED - 0 = Random, Or enter your own value
+IDENTITY - Server folder name,  e.g My-server-name, server-01 etc
+SAVE_INTERVAL - In seconds
+ANNOUNCE_DELAY - Delay in minutes between each announcement.
 
 ```
 
