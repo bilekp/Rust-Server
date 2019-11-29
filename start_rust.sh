@@ -315,38 +315,26 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/steamcmd/rust/RustDedicated_Data/Plugin
 
 
 
-#CHECK IF OXIDE IS ENABLED
-######################
-
-if [ "$OXIDE" = "1" ]; then
+# Check if Oxide is enabled
+if [ "$RUST_OXIDE_ENABLED" = "1" ]; then
 	# Next check if Oxide doesn't' exist, or if we want to always update it
 	INSTALL_OXIDE="0"
-
-  if [ ! -f "/steamcmd/rust/Compiler.x86_x64" ]; then
-    if [ ! -f "/steamcmd/rust/CSharpCompiler.x86_x64" ]; then
-		  INSTALL_OXIDE="1"
-	 fi
-  fi
-
-	if [ "$OXIDE_UPDATE" = "1" ]; then
+	if [ ! -f "/steamcmd/rust/CSharpCompiler.x86_x64" ]; then
+		INSTALL_OXIDE="1"
+	fi
+	if [ "$RUST_OXIDE_UPDATE_ON_BOOT" = "1" ]; then
 		INSTALL_OXIDE="1"
 	fi
 
 	# If necessary, download and install latest Oxide
 	if [ "$INSTALL_OXIDE" = "1" ]; then
 		echo "Downloading and installing latest Oxide.."
-		## OXIDE_URL=$(curl -sL https://api.github.com/repos/OxideMod/Oxide.Rust/releases/latest | grep browser_download_url | cut -d '"' -f 4)
-                   OXIDE_URL=$(curl -sL https://umod.org/games/rust/download/develop | grep browser_download_url | cut -d '"' -f 4)
-		curl -sL "$OXIDE_URL" | bsdtar -xvf- -C /steamcmd/rust/
+		OXIDE_URL="https://umod.org/games/rust/download/develop"
+		curl -sL $OXIDE_URL | bsdtar -xvf- -C /steamcmd/rust/
+		chmod 755 /steamcmd/rust/CSharpCompiler.x86_x64 2>&1 /dev/null
 
-	if [ -f "/steamcmd/rust/Compiler.x86_x64" ]; then
-		chmod +x /steamcmd/rust/Compiler.x86_x64 2>&1 /dev/null
-  elif [ -f "/steamcmd/rust/CSharpCompiler.x86_x64" ]; then
-     chmod +x /steamcmd/rust/CSharpCompiler.x86_x64 2>&1 /dev/null
-	fi
-		
 		## NOTE: Disabled until I have time to properly fix this
-		chmod -R 777 /steamcmd/rust
+		#chown -R $PUID:$PGID /steamcmd/rust
 	fi
 fi
 
