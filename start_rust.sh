@@ -315,14 +315,17 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/steamcmd/rust/RustDedicated_Data/Plugin
 
 
 
-# Check if Oxide is enabled
-if [ "$RUST_OXIDE_ENABLED" = "1" ]; then
+if [ "$OXIDE" = "1" ]; then
 	# Next check if Oxide doesn't' exist, or if we want to always update it
 	INSTALL_OXIDE="0"
-	if [ ! -f "/steamcmd/rust/CSharpCompiler.x86_x64" ]; then
-		INSTALL_OXIDE="1"
-	fi
-	if [ "$RUST_OXIDE_UPDATE_ON_BOOT" = "1" ]; then
+
+  if [ ! -f "/steamcmd/rust/Compiler.x86_x64" ]; then
+    if [ ! -f "/steamcmd/rust/CSharpCompiler.x86_x64" ]; then
+		  INSTALL_OXIDE="1"
+	 fi
+  fi
+
+	if [ "$OXIDE_UPDATE" = "1" ]; then
 		INSTALL_OXIDE="1"
 	fi
 
