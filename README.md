@@ -24,7 +24,7 @@ Cracked or pirated versions of Rust are not supported in any way, shape or form.
 
 1. Add new container under Docker tab.
 2. Give the container a name you prefer.
-3. Add ``` tobiaspedersen/rust-server ``` in Repository.
+3. Add ``` bilekp/rust-server ``` in Repository.
 4. Add the variables you want from the list below.
 5. Add ports to container, (8080/TCP, 28015/TCP&UDP, 28016/TCP).
 6. Save Template and RUN :)
